@@ -10,3 +10,11 @@ script:
 - ng lint
 - ng test --watch=false --browsers=ChromeHeadless
 - ng build --prod --base-href https://konvio.github.io/calculator-ui/
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/angular-calculator
+  on:
+    branch: master
