@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - 12
+dist: bionic
+sudo: required
 
-addons:
-  chrome: stable
+before_script:
+  - npm install -g @angular/cli
+script:
+- ng lint
+- ng build --prod --base-href https://konvio.github.io/calculator-ui/
